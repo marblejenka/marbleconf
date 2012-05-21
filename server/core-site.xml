@@ -10,6 +10,6 @@
 	</property>
 	<property>
 		<name>hadoop.tmp.dir</name>
-		<value>/tmp/hadoop</value>
+		<value>/var/local/hadoop</value>
 	</property>
 </configuration>
