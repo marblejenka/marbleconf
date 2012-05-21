@@ -11,7 +11,7 @@
 
 	<property>
 		<name>mapred.job.tracker</name>
-		<value>fc1:8021</value>
+		<value>fc5:8021</value>
 	</property>
 
 	<property>
