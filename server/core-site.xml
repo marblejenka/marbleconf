@@ -6,7 +6,7 @@
 <configuration>
 	<property>
 		<name>fs.default.name</name>
-		<value>hdfs://fc1:8020/</value>
+		<value>hdfs://fc5:8020/</value>
 	</property>
 	<property>
 		<name>hadoop.tmp.dir</name>

@@ -18,4 +18,9 @@
 		<name>dfs.umaskmode</name>
 		<value>077</value>
 	</property>
+
+	<property>
+		<name>dfs.data.dir</name>
+		<value>/mnt/sdb/hadoop/data,/mnt/sdc/hadoop/data</value>
+	</property>
 </configuration>
