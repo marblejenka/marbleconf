@@ -21,6 +21,6 @@
 
 	<property>
 		<name>dfs.data.dir</name>
-		<value>/mnt/sdb/hadoop/data,/mnt/sdc/hadoop/data</value>
+		<value>/mnt/sdb/hadoop/data/,/mnt/sdc/hadoop/data/</value>
 	</property>
 </configuration>
