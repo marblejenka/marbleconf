@@ -100,25 +100,25 @@
 	</property>
 	<property>
 		<name>mapred.job.map.memory.mb</name>
-		<value>4096</value>
+		<value>2048</value>
 	</property>
 	<property>
 		<name>mapred.job.reduce.memory.mb</name>
-		<value>4096</value>
+		<value>2048</value>
 	</property>
 
 	<!-- メモリ監視 -->
 	<property>
 		<name>mapred.tasktracker.vmem.reserved</name>
-		<value>0</value>
+		<value>10240m</value>
 	</property>
 	<property>
 		<name>mapred.task.default.maxvmem</name>
-		<value>0</value>
+		<value>8192m</value>
 	</property>
 	<property>
 		<name>mapred.task.limit.maxvmem</name>
-		<value>0</value>
+		<value>8192m</value>
 	</property>
 	<property>
 		<name>mapred.tasktracker.taskmemorymanager.monitoring-interval</name>
