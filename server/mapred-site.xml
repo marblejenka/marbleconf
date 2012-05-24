@@ -110,11 +110,11 @@
 	<!-- メモリ監視 -->
 	<property>
 		<name>mapred.tasktracker.vmem.reserved</name>
-		<value>10240m</value>
+		<value>0</value>
 	</property>
 	<property>
 		<name>mapred.task.default.maxvmem</name>
-		<value>8192m</value>
+		<value>0</value>
 	</property>
 	<property>
 		<name>mapred.tasktracker.taskmemorymanager.monitoring-interval</name>
