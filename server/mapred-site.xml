@@ -81,7 +81,8 @@
 		<value>-Xms512m -Xmx2048m</value>
 	</property>
 
-	<!-- メモリ管理 -->
+	<!-- メモリ管理 
+	なんかうごかないっぽい
 	<property>
 		<name>mapred.task.maxvmem</name>
 		<value>0</value>
@@ -90,7 +91,7 @@
 		<name>mapred.task.maxpmem</name>
 		<value>4096m</value>
 	</property>
-
+-->
 	<!-- メモリ監視 -->
 	<property>
 		<name>mapred.tasktracker.vmem.reserved</name>
