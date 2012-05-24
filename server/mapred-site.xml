@@ -81,17 +81,24 @@
 		<value>-Xms512m -Xmx2048m</value>
 	</property>
 
-	<!-- メモリ管理 
-	なんかうごかないっぽい
+	<!-- メモリ管理 -->
 	<property>
-		<name>mapred.task.maxvmem</name>
-		<value>0</value>
+		<name>mapred.cluster.max.map.memory.mb</name>
+		<value>8192</value>
 	</property>
 	<property>
-		<name>mapred.task.maxpmem</name>
-		<value>4096m</value>
+		<name>mapred.cluster.max.reduce.memory.mb</name>
+		<value>8192</value>
 	</property>
--->
+	<property>
+		<name>mapred.cluster.map.memory.mb</name>
+		<value>4096</value>
+	</property>
+	<property>
+		<name>mapred.cluster.reduce.memory.mb</name>
+		<value>4096</value>
+	</property>
+
 	<!-- メモリ監視 -->
 	<property>
 		<name>mapred.tasktracker.vmem.reserved</name>
