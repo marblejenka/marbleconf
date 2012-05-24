@@ -100,11 +100,11 @@
 	</property>
 	<property>
 		<name>mapred.job.map.memory.mb</name>
-		<value>2048</value>
+		<value>4096</value>
 	</property>
 	<property>
 		<name>mapred.job.reduce.memory.mb</name>
-		<value>2048</value>
+		<value>4096</value>
 	</property>
 
 	<!-- メモリ監視 -->
