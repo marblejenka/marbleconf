@@ -117,10 +117,6 @@
 		<value>8192m</value>
 	</property>
 	<property>
-		<name>mapred.task.limit.maxvmem</name>
-		<value>8192m</value>
-	</property>
-	<property>
 		<name>mapred.tasktracker.taskmemorymanager.monitoring-interval</name>
 		<value>5000</value>
 	</property>
