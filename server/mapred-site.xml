@@ -98,6 +98,14 @@
 		<name>mapred.cluster.reduce.memory.mb</name>
 		<value>4096</value>
 	</property>
+	<property>
+		<name>mapred.job.map.memory.mb</name>
+		<value>4096</value>
+	</property>
+	<property>
+		<name>mapred.job.reduce.memory.mb</name>
+		<value>4096</value>
+	</property>
 
 	<!-- メモリ監視 -->
 	<property>
