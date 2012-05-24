@@ -5,11 +5,6 @@
 
 <configuration>
 	<property>
-		<name>mapred.child.java.opts</name>
-		<value>-Xmx2000m</value>
-	</property>
-
-	<property>
 		<name>mapred.job.tracker</name>
 		<value>fc5:8021</value>
 	</property>
@@ -29,14 +24,15 @@
 		<value>4</value>
 	</property>
 
+	<!-- スロット -->
 	<property>
 		<name>mapred.tasktracker.map.tasks.maximum</name>
-		<value>2</value>
+		<value>4</value>
 	</property>
 
 	<property>
 		<name>mapred.tasktracker.reduce.tasks.maximum</name>
-		<value>2</value>
+		<value>4</value>
 	</property>
 
 	<!-- 中間データの圧縮 -->
@@ -67,5 +63,53 @@
 	<property>
 		<name>io.sort.factor</name>
 		<value>64</value>
+	</property>
+
+	<!-- スケジューラー -->
+	<property>
+		<name>mapred.jobtracker.taskScheduler</name>
+		<value>org.apache.hadoop.mapred.CapacityTaskScheduler</value>
+	</property>
+
+	<!--タスク実行環境 -->
+	<property>
+		<name>mapred.map.child.java.opts</name>
+		<value>-Xms512m -Xmx2048m</value>
+	</property>
+	<property>
+		<name>mapred.reduce.child.java.opts</name>
+		<value>-Xms512m -Xmx2048m</value>
+	</property>
+
+	<!-- メモリ管理 -->
+	<property>
+		<name>mapred.task.maxvmem</name>
+		<value>0</value>
+	</property>
+	<property>
+		<name>mapred.task.maxpmem</name>
+		<value>4096m</value>
+	</property>
+
+	<!-- メモリ監視 -->
+	<property>
+		<name>mapred.tasktracker.vmem.reserved</name>
+		<value>0</value>
+	</property>
+	<property>
+		<name>mapred.task.default.maxvmem</name>
+		<value>0</value>
+	</property>
+	<property>
+		<name>mapred.task.limit.maxvmem</name>
+		<value>0</value>
+	</property>
+	<property>
+		<name>mapred.tasktracker.taskmemorymanager.monitoring-interval</name>
+		<value>5000</value>
+	</property>
+	<property>
+		<name>mapred.tasktracker.pmem.reserved</name>
+		<value>10240m</value>
 	</property>
 </configuration>
