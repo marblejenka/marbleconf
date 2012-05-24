@@ -20,19 +20,24 @@
 	</property>
 
 	<property>
+		<name>mapred.map.tasks</name>
+		<value>7</value>
+	</property>
+
+	<property>
 		<name>mapred.reduce.tasks</name>
-		<value>4</value>
+		<value>7</value>
 	</property>
 
 	<!-- スロット -->
 	<property>
 		<name>mapred.tasktracker.map.tasks.maximum</name>
-		<value>4</value>
+		<value>2</value>
 	</property>
 
 	<property>
 		<name>mapred.tasktracker.reduce.tasks.maximum</name>
-		<value>4</value>
+		<value>2</value>
 	</property>
 
 	<!-- 中間データの圧縮 -->
@@ -109,19 +114,11 @@
 
 	<!-- メモリ監視 -->
 	<property>
-		<name>mapred.tasktracker.vmem.reserved</name>
-		<value>0</value>
-	</property>
-	<property>
-		<name>mapred.task.default.maxvmem</name>
-		<value>0</value>
-	</property>
-	<property>
-		<name>mapred.tasktracker.taskmemorymanager.monitoring-interval</name>
+		<name>mapreduce.tasktracker.taskmemorymanager.monitoringinterval</name>
 		<value>5000</value>
 	</property>
 	<property>
-		<name>mapred.tasktracker.pmem.reserved</name>
-		<value>10240m</value>
+		<name>mapreduce.tasktracker.reserved.physicalmemory.mb</name>
+		<value>10240</value>
 	</property>
 </configuration>
