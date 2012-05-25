@@ -4,19 +4,16 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
+	<!-- 全体的な設定 -->
 	<property>
 		<name>mapred.job.tracker</name>
 		<value>fc5:8021</value>
 	</property>
 
+	<!-- スケジューラー -->
 	<property>
-		<name>mapred.reduce.parallel.copies</name>
-		<value>2</value>
-	</property>
-
-	<property>
-		<name>mapred.reduce.slowstart.completed.maps</name>
-		<value>0.8</value>
+		<name>mapred.jobtracker.taskScheduler</name>
+		<value>org.apache.hadoop.mapred.CapacityTaskScheduler</value>
 	</property>
 
 	<!-- スロットとタスク割り当て -->
@@ -37,42 +34,6 @@
 		<value>11</value>
 	</property>
 
-	<!-- 中間データの圧縮 -->
-	<property>
-		<name>mapred.compress.map.output</name>
-		<value>true</value>
-	</property>
-	<property>
-		<name>mapred.map.output.compression.codec</name>
-		<value>org.apache.hadoop.io.compress.SnappyCodec</value>
-	</property>
-
-	<property>
-		<name>mapred.output.compression.type</name>
-		<value>BLOCK</value>
-	</property>
-
-	<property>
-		<name>tasktracker.http.threads</name>
-		<value>40</value>
-	</property>
-
-	<property>
-		<name>io.sort.mb</name>
-		<value>256</value>
-	</property>
-
-	<property>
-		<name>io.sort.factor</name>
-		<value>64</value>
-	</property>
-
-	<!-- スケジューラー -->
-	<property>
-		<name>mapred.jobtracker.taskScheduler</name>
-		<value>org.apache.hadoop.mapred.CapacityTaskScheduler</value>
-	</property>
-
 	<!--タスク実行環境 -->
 	<property>
 		<name>mapred.map.child.java.opts</name>
@@ -83,7 +44,7 @@
 		<value>-Xms1024m -Xmx3072m</value>
 	</property>
 
-	<!-- メモリ監視・管理 -->
+	<!-- メモリ監視 -->
 	<property>
 		<name>mapreduce.map.memory.physical.mb</name>
 		<value>3072</value>
@@ -100,5 +61,77 @@
 	<property>
 		<name>mapreduce.tasktracker.reserved.physicalmemory.mb</name>
 		<value>4096</value>
+	</property>
+
+	<!-- ジョブ入出力の効率化 -->
+	<property>
+		<name>mapred.output.compression.type</name>
+		<value>BLOCK</value>
+	</property>
+
+	<!-- シャッフルフェーズの効率化 -->
+	<property>
+		<name>io.sort.mb</name>
+		<value>512</value>
+		<description>map</description>
+	</property>
+	<property>
+		<name>io.sort.record.percent</name>
+		<value>0.1</value>
+		<description>map reduce</description>
+	</property>
+	<property>
+		<name>io.sort.spill.percent</name>
+		<value>0.95</value>
+		<description>map reduce</description>
+	</property>
+	<property>
+		<name>io.sort.factor</name>
+		<value>100</value>
+		<description>map reduce</description>
+	</property>
+	<property>
+		<name>mapred.compress.map.output</name>
+		<value>true</value>
+		<description>map</description>
+	</property>
+	<property>
+		<name>mapred.map.output.compression.codec</name>
+		<value>org.apache.hadoop.io.compress.SnappyCodec</value>
+		<description>map</description>
+	</property>
+	<property>
+		<name>tasktracker.http.threads</name>
+		<value>80</value>
+		<description>map</description>
+	</property>
+	<property>
+		<name>mapred.reduce.parallel.copies</name>
+		<value>4</value>
+		<description>reduce</description>
+	</property>
+	<property>
+		<name>mapred.job.shuffle.input.buffer.percent</name>
+		<value>3</value>
+		<description>reduce</description>
+	</property>
+	<property>
+		<name>mapred.job.shuffle.merge.percent</name>
+		<value>0.7</value>
+		<description>reduce</description>
+	</property>
+	<property>
+		<name>mapred.inmem.merge.threshold</name>
+		<value>0</value>
+		<description>reduce</description>
+	</property>
+	<property>
+		<name>mapred.job.reduce.input.buffer.percent</name>
+		<value>5</value>
+		<description>reduce</description>
+	</property>
+	<property>
+		<name>mapred.reduce.slowstart.completed.maps</name>
+		<value>0.4</value>
 	</property>
 </configuration>
