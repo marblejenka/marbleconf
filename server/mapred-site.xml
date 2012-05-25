@@ -121,4 +121,8 @@
 		<name>mapreduce.tasktracker.reserved.physicalmemory.mb</name>
 		<value>10240</value>
 	</property>
+        <property>
+               <name>mapred.tasktracker.pmem.reserved</name>
+               <value>10240m</value>
+        </property>
 </configuration>
