@@ -32,12 +32,12 @@
 	<!-- スロット -->
 	<property>
 		<name>mapred.tasktracker.map.tasks.maximum</name>
-		<value>2</value>
+		<value>3</value>
 	</property>
 
 	<property>
 		<name>mapred.tasktracker.reduce.tasks.maximum</name>
-		<value>2</value>
+		<value>3</value>
 	</property>
 
 	<!-- 中間データの圧縮 -->
@@ -79,58 +79,29 @@
 	<!--タスク実行環境 -->
 	<property>
 		<name>mapred.map.child.java.opts</name>
-		<value>-Xms512m -Xmx2048m</value>
+		<value>-Xms1024m -Xmx3072m</value>
 	</property>
 	<property>
 		<name>mapred.reduce.child.java.opts</name>
-		<value>-Xms512m -Xmx2048m</value>
+		<value>-Xms1024m -Xmx3072m</value>
 	</property>
 
-	<!-- メモリ管理 -->
+	<!-- メモリ監視・管理 -->
 	<property>
-		<name>mapred.cluster.max.map.memory.mb</name>
-		<value>8192</value>
-	</property>
-	<property>
-		<name>mapred.cluster.max.reduce.memory.mb</name>
-		<value>8192</value>
-	</property>
-	<property>
-		<name>mapred.cluster.map.memory.mb</name>
+		<name>mapreduce.map.memory.physical.mb</name>
 		<value>4096</value>
 	</property>
 	<property>
-		<name>mapred.cluster.reduce.memory.mb</name>
+		<name>mapreduce.reduce.memory.physical.mb</name>
 		<value>4096</value>
 	</property>
 	<property>
-		<name>mapred.job.map.memory.mb</name>
-		<value>4096</value>
-	</property>
-	<property>
-		<name>mapred.job.reduce.memory.mb</name>
-		<value>4096</value>
-	</property>
-
-	<!-- メモリ監視 -->
-        <property>
-               <name>mapred.tasktracker.vmem.reserved</name>
-               <value>0</value>
-       </property>
-       <property>
-               <name>mapred.task.default.maxvmem</name>
-               <value>0</value>
-       </property>
-	<property>
-		<name>mapreduce.tasktracker.taskmemorymanager.monitoringinterval</name>
+		<name>mapreduce.tasktracker.taskmemorymanager.monitoringinterval
+		</name>
 		<value>5000</value>
 	</property>
 	<property>
 		<name>mapreduce.tasktracker.reserved.physicalmemory.mb</name>
-		<value>10240</value>
+		<value>12288</value>
 	</property>
-        <property>
-               <name>mapred.tasktracker.pmem.reserved</name>
-               <value>10240m</value>
-        </property>
 </configuration>
