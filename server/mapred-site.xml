@@ -19,7 +19,6 @@
 		<value>0.8</value>
 	</property>
 
-
 	<!-- スロットとタスク割り当て -->
 	<property>
 		<name>mapred.tasktracker.map.tasks.maximum</name>
@@ -100,6 +99,6 @@
 	</property>
 	<property>
 		<name>mapreduce.tasktracker.reserved.physicalmemory.mb</name>
-		<value>12288</value>
+		<value>4096</value>
 	</property>
 </configuration>
