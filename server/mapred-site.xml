@@ -19,23 +19,22 @@
 		<value>0.8</value>
 	</property>
 
-
 	<!-- スロットとタスク割り当て -->
 	<property>
 		<name>mapred.tasktracker.map.tasks.maximum</name>
-		<value>3</value>
+		<value>4</value>
 	</property>
 	<property>
 		<name>mapred.tasktracker.reduce.tasks.maximum</name>
-		<value>2</value>
+		<value>3</value>
 	</property>
 	<property>
 		<name>mapred.map.tasks</name>
-		<value>11</value>
+		<value>15</value>
 	</property>
 	<property>
 		<name>mapred.reduce.tasks</name>
-		<value>7</value>
+		<value>11</value>
 	</property>
 
 	<!-- 中間データの圧縮 -->
@@ -77,21 +76,21 @@
 	<!--タスク実行環境 -->
 	<property>
 		<name>mapred.map.child.java.opts</name>
-		<value>-Xms1024m -Xmx3072m</value>
+		<value>-Xms1024m -Xmx2048m</value>
 	</property>
 	<property>
 		<name>mapred.reduce.child.java.opts</name>
-		<value>-Xms1024m -Xmx4096m</value>
+		<value>-Xms1024m -Xmx3072m</value>
 	</property>
 
 	<!-- メモリ監視・管理 -->
 	<property>
 		<name>mapreduce.map.memory.physical.mb</name>
-		<value>4096</value>
+		<value>3072</value>
 	</property>
 	<property>
 		<name>mapreduce.reduce.memory.physical.mb</name>
-		<value>6144</value>
+		<value>4096</value>
 	</property>
 	<property>
 		<name>mapreduce.tasktracker.taskmemorymanager.monitoringinterval
@@ -100,6 +99,6 @@
 	</property>
 	<property>
 		<name>mapreduce.tasktracker.reserved.physicalmemory.mb</name>
-		<value>12288</value>
+		<value>4096</value>
 	</property>
 </configuration>
