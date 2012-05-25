@@ -127,7 +127,7 @@
 	</property>
 	<property>
 		<name>mapred.job.reduce.input.buffer.percent</name>
-		<value>5</value>
+		<value>0.05</value>
 		<description>reduce</description>
 	</property>
 	<property>
