@@ -10,9 +10,16 @@
 		<value>fc5:8021</value>
 	</property>
 
-	<!-- スケジューラー <property> <name>mapred.jobtracker.taskScheduler</name> <value>org.apache.hadoop.mapred.CapacityTaskScheduler</value> 
-		</property> -->
-
+	<!-- スケジューラー -->
+	<property>
+		<name>mapred.jobtracker.taskScheduler</name>
+		<value>org.apache.hadoop.mapred.FairScheduler</value>
+	</property>
+	<property>
+		<name>mapred.fairscheduler.allocation.file</name>
+		<value>/usr/lib/hadoop/conf/allocations.xml</value>
+	</property>
+	
 	<!-- スロットとタスク割り当て -->
 	<property>
 		<name>mapred.tasktracker.map.tasks.maximum</name>
