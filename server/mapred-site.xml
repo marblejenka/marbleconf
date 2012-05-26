@@ -10,11 +10,8 @@
 		<value>fc5:8021</value>
 	</property>
 
-	<!-- スケジューラー -->
-	<property>
-		<name>mapred.jobtracker.taskScheduler</name>
-		<value>org.apache.hadoop.mapred.CapacityTaskScheduler</value>
-	</property>
+	<!-- スケジューラー <property> <name>mapred.jobtracker.taskScheduler</name> <value>org.apache.hadoop.mapred.CapacityTaskScheduler</value> 
+		</property> -->
 
 	<!-- スロットとタスク割り当て -->
 	<property>
@@ -82,7 +79,7 @@
 	</property>
 	<property>
 		<name>io.sort.spill.percent</name>
-		<value>0.95</value>
+		<value>0.6</value>
 		<description>map reduce</description>
 	</property>
 	<property>
