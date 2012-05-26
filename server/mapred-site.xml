@@ -23,7 +23,7 @@
 	<!-- スロットとタスク割り当て -->
 	<property>
 		<name>mapred.tasktracker.map.tasks.maximum</name>
-		<value>4</value>
+		<value>5</value>
 	</property>
 	<property>
 		<name>mapred.tasktracker.reduce.tasks.maximum</name>
@@ -31,7 +31,7 @@
 	</property>
 	<property>
 		<name>mapred.map.tasks</name>
-		<value>15</value>
+		<value>19</value>
 	</property>
 	<property>
 		<name>mapred.reduce.tasks</name>
@@ -76,22 +76,22 @@
 	<!-- シャッフルフェーズの効率化 -->
 	<property>
 		<name>io.sort.mb</name>
-		<value>512</value>
+		<value>768</value>
 		<description>map</description>
 	</property>
 	<property>
 		<name>io.sort.record.percent</name>
-		<value>0.1</value>
+		<value>0.2</value>
 		<description>map reduce</description>
-	</property>
+	</property>	
 	<property>
 		<name>io.sort.spill.percent</name>
-		<value>0.6</value>
+		<value>0.95</value>
 		<description>map reduce</description>
 	</property>
 	<property>
 		<name>io.sort.factor</name>
-		<value>100</value>
+		<value>200</value>
 		<description>map reduce</description>
 	</property>
 	<property>
@@ -116,26 +116,26 @@
 	</property>
 	<property>
 		<name>mapred.job.shuffle.input.buffer.percent</name>
-		<value>0.6</value>
+		<value>0.95</value>
 		<description>reduce</description>
 	</property>
 	<property>
 		<name>mapred.job.shuffle.merge.percent</name>
-		<value>0.7</value>
+		<value>0.95</value>
 		<description>reduce</description>
 	</property>
 	<property>
 		<name>mapred.inmem.merge.threshold</name>
-		<value>0</value>
+		<value>20000</value>
 		<description>reduce</description>
 	</property>
 	<property>
 		<name>mapred.job.reduce.input.buffer.percent</name>
-		<value>0.05</value>
+		<value>0.95</value>
 		<description>reduce</description>
 	</property>
 	<property>
 		<name>mapred.reduce.slowstart.completed.maps</name>
-		<value>0.4</value>
+		<value>0</value>
 	</property>
 </configuration>
