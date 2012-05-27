@@ -7,7 +7,7 @@
 	<!-- 全体的な設定 -->
 	<property>
 		<name>mapred.job.tracker</name>
-		<value>fc5:8021</value>
+		<value>${local.jobtracker}:8021</value>
 	</property>
 
 	<!-- スケジューラー -->
@@ -19,7 +19,13 @@
 		<name>mapred.fairscheduler.allocation.file</name>
 		<value>/usr/lib/hadoop/conf/allocations.xml</value>
 	</property>
-	
+
+	<!-- タスク割り当ての効率化 -->
+	<property>
+		<name>mapreduce.tasktracker.outofband.heartbeat</name>
+		<value>true</value>
+	</property>
+
 	<!-- スロットとタスク割り当て -->
 	<property>
 		<name>mapred.tasktracker.map.tasks.maximum</name>
@@ -83,7 +89,7 @@
 		<name>io.sort.record.percent</name>
 		<value>0.2</value>
 		<description>map reduce</description>
-	</property>	
+	</property>
 	<property>
 		<name>io.sort.spill.percent</name>
 		<value>0.95</value>
@@ -140,6 +146,7 @@
 	</property>
 	<property>
 		<name>mapred.local.dir</name>
-		<value>/mnt/sda/hadoop/mapred/local,/mnt/sdb/hadoop/mapred/local,/mnt/sdc/hadoop/mapred/local</value>
+		<value>/mnt/sda/hadoop/mapred/local,/mnt/sdb/hadoop/mapred/local,/mnt/sdc/hadoop/mapred/local
+		</value>
 	</property>
 </configuration>
