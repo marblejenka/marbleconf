@@ -29,5 +29,6 @@
 	<property>
 		<name>hadoop.tmp.dir</name>
 		<value>/var/local/hadoop</value>
+		<final>true</final>
 	</property>
 </configuration>

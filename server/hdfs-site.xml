@@ -16,17 +16,19 @@
 	<property>
 		<name>dfs.datanode.du.reserved</name>
 		<value>536870912000</value>
+		<final>true</final>
 	</property>
 	<property>
 		<name>dfs.data.dir</name>
-		<value>/mnt/sda/hadoop/data/,/mnt/sdb/hadoop/data/,/mnt/sdc/hadoop/data/
-		</value>
+		<value>/mnt/sda/hadoop/data/,/mnt/sdb/hadoop/data/,/mnt/sdc/hadoop/data/</value>
+		<final>true</final>
 	</property>
 
 	<!--  safe mode -->
 	<property>
 		<name>dfs.safemode.threshold.pct</name>
 		<value>0</value>
+		<final>true</final>
 		<description>safemodeにしない</description>
 	</property>
 
@@ -34,19 +36,23 @@
 	<property>
 		<name>dfs.namenode.handler.count</name>
 		<value>20</value>
+		<final>true</final>
 	</property>
 	<property>
 		<name>dfs.datanode.handler.count</name>
 		<value>15</value>
+		<final>true</final>
 	</property>
 
 	<!-- セキュリティ周り -->
 	<property>
 		<name>dfs.permissions</name>
 		<value>false</value>
+		<final>true</final>
 	</property>
 	<property>
 		<name>dfs.umaskmode</name>
 		<value>077</value>
+		<final>true</final>
 	</property>
 </configuration>

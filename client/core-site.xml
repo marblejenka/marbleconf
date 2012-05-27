@@ -4,8 +4,26 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
+	<!-- ホスト名 -->
+	<property>
+		<name>local.namenode</name>
+		<value>fc5</value>
+	</property>
+	<property>
+		<name>local.secondnamenode</name>
+		<value>fc5</value>
+	</property>
+	<property>
+		<name>local.jobtracker</name>
+		<value>fc5</value>
+	</property>
+
 	<property>
 		<name>fs.default.name</name>
-		<value>hdfs://fc5:8020/</value>
+		<value>hdfs://${local.namenode}:8020</value>
+	</property>
+	<property>
+		<name>io.file.buffer.size</name>
+		<value>65536</value>
 	</property>
 </configuration>

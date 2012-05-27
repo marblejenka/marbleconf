@@ -7,6 +7,7 @@
 	<property>
 		<name>mapred.job.tracker</name>
 		<value>${local.jobtracker}:8021</value>
+		<final>true</final>
 	</property>
 
 	<!-- タスク取得の効率化 -->
@@ -25,20 +26,24 @@
 	<property>
 		<name>mapred.jobtracker.taskScheduler</name>
 		<value>org.apache.hadoop.mapred.FairScheduler</value>
+		<final>true</final>
 	</property>
 	<property>
 		<name>mapred.fairscheduler.allocation.file</name>
 		<value>/usr/lib/hadoop/conf/allocations.xml</value>
+		<final>true</final>
 	</property>
 
 	<!-- スロットとタスク割り当て -->
 	<property>
 		<name>mapred.tasktracker.map.tasks.maximum</name>
-		<value>4</value>
+		<value>6</value>
+		<final>true</final>
 	</property>
 	<property>
 		<name>mapred.tasktracker.reduce.tasks.maximum</name>
-		<value>3</value>
+		<value>4</value>
+		<final>true</final>
 	</property>
 	<property>
 		<name>mapred.map.tasks</name>
@@ -72,19 +77,23 @@
 	<property>
 		<name>mapreduce.map.memory.physical.mb</name>
 		<value>2048</value>
+		<final>true</final>
 	</property>
 	<property>
 		<name>mapreduce.reduce.memory.physical.mb</name>
 		<value>3072</value>
+		<final>true</final>
 	</property>
 	<property>
 		<name>mapreduce.tasktracker.taskmemorymanager.monitoringinterval
 		</name>
+		<final>true</final>
 		<value>5000</value>
 	</property>
 	<property>
 		<name>mapreduce.tasktracker.reserved.physicalmemory.mb</name>
 		<value>4096</value>
+		<final>true</final>
 	</property>
 
 	<!-- ジョブ入出力の効率化 -->
@@ -160,8 +169,8 @@
 	</property>
 	<property>
 		<name>mapred.local.dir</name>
-		<value>/mnt/sda/hadoop/mapred/local,/mnt/sdb/hadoop/mapred/local,/mnt/sdc/hadoop/mapred/local
-		</value>
+		<value>/mnt/sda/hadoop/mapred/local,/mnt/sdb/hadoop/mapred/local,/mnt/sdc/hadoop/mapred/local</value>
+		<final>true</final>
 	</property>
 
 	<!-- profiling <property> <name>mapred.task.profile</name> <value>true</value> 
