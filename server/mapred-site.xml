@@ -34,7 +34,7 @@
 	<!-- スロットとタスク割り当て -->
 	<property>
 		<name>mapred.tasktracker.map.tasks.maximum</name>
-		<value>4</value>
+		<value>3</value>
 	</property>
 	<property>
 		<name>mapred.tasktracker.reduce.tasks.maximum</name>
@@ -42,7 +42,7 @@
 	</property>
 	<property>
 		<name>mapred.map.tasks</name>
-		<value>15</value>
+		<value>11</value>
 	</property>
 	<property>
 		<name>mapred.reduce.tasks</name>
