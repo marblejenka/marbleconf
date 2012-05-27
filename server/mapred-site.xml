@@ -4,10 +4,21 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
-	<!-- 全体的な設定 -->
 	<property>
 		<name>mapred.job.tracker</name>
 		<value>${local.jobtracker}:8021</value>
+	</property>
+
+	<!-- タスク取得の効率化 -->
+	<property>
+		<name>mapreduce.tasktracker.outofband.heartbeat</name>
+		<value>true</value>
+	</property>
+
+	<!-- jvm起動のオーバーヘッド回避 -->
+	<property>
+		<name>mapred.job.reuse.jvm.num.tasks</name>
+		<value>-1</value>
 	</property>
 
 	<!-- スケジューラー -->
@@ -18,12 +29,6 @@
 	<property>
 		<name>mapred.fairscheduler.allocation.file</name>
 		<value>/usr/lib/hadoop/conf/allocations.xml</value>
-	</property>
-
-	<!-- タスク割り当ての効率化 -->
-	<property>
-		<name>mapreduce.tasktracker.outofband.heartbeat</name>
-		<value>true</value>
 	</property>
 
 	<!-- スロットとタスク割り当て -->
