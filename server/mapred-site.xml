@@ -37,27 +37,27 @@
 	<!-- スロットとタスク割り当て -->
 	<property>
 		<name>mapred.tasktracker.map.tasks.maximum</name>
-		<value>6</value>
-		<final>true</final>
-	</property>
-	<property>
-		<name>mapred.tasktracker.reduce.tasks.maximum</name>
 		<value>4</value>
 		<final>true</final>
 	</property>
 	<property>
+		<name>mapred.tasktracker.reduce.tasks.maximum</name>
+		<value>2</value>
+		<final>true</final>
+	</property>
+	<property>
 		<name>mapred.map.tasks</name>
-		<value>15</value>
+		<value>16</value>
 	</property>
 	<property>
 		<name>mapred.reduce.tasks</name>
-		<value>12</value>
+		<value>8</value>
 	</property>
 
 	<!--投機的実行の無効化 -->
 	<property>
 		<name>mapred.map.tasks.speculative.execution</name>
-		<value>true</value>
+		<value>false</value>
 	</property>
 	<property>
 		<name>mapred.reduce.tasks.speculative.execution</name>
@@ -70,7 +70,7 @@
 	</property>
 	<property>
 		<name>mapred.reduce.child.java.opts</name>
-		<value>-Xms2048m -Xmx2048m</value>
+		<value>-Xms3072m -Xmx3072m</value>
 	</property>
 
 	<!-- メモリ監視 -->
@@ -81,7 +81,7 @@
 	</property>
 	<property>
 		<name>mapreduce.reduce.memory.physical.mb</name>
-		<value>3072</value>
+		<value>4096</value>
 		<final>true</final>
 	</property>
 	<property>
