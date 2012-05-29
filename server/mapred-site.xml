@@ -155,7 +155,7 @@
 	</property>
 	<property>
 		<name>mapred.inmem.merge.threshold</name>
-		<value>10000</value>
+		<value>20000</value>
 		<description>reduce</description>
 	</property>
 	<property>
