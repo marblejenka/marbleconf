@@ -12,11 +12,11 @@
 	
 	<property>
 		<name>mapred.map.tasks</name>
-		<value>15</value>
+		<value>12</value>
 	</property>
 	<property>
 		<name>mapred.reduce.tasks</name>
-		<value>12</value>
+		<value>6</value>
 	</property>
 
 	<property>
