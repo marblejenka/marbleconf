@@ -4,7 +4,12 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
-	<!-- スロットとタスク割り当て -->
+	<property>
+		<name>mapred.job.tracker</name>
+		<value>${local.jobtracker}:8021</value>
+		<final>true</final>
+	</property>
+	
 	<property>
 		<name>mapred.map.tasks</name>
 		<value>15</value>
