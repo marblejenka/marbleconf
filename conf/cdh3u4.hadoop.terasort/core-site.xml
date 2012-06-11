@@ -28,7 +28,7 @@
 	</property>
 	<property>
 		<name>hadoop.tmp.dir</name>
-		<value>/var/local/hadoop</value>
+		<value>/var/local/cdh3</value>
 		<final>true</final>
 	</property>
 </configuration>
