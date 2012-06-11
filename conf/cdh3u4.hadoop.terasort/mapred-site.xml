@@ -30,7 +30,7 @@
 	</property>
 	<property>
 		<name>mapred.fairscheduler.allocation.file</name>
-		<value>/usr/lib/hadoop/conf/allocations.xml</value>
+		<value>$HADOOP_HOME/conf/allocations.xml</value>
 		<final>true</final>
 	</property>
 
@@ -169,7 +169,7 @@
 	</property>
 	<property>
 		<name>mapred.local.dir</name>
-		<value>/mnt/sda/hadoop/mapred/local,/mnt/sdb/hadoop/mapred/local,/mnt/sdc/hadoop/mapred/local</value>
+		<value>/mnt/sda/cdh3/mapred/local,/mnt/sdb/cdh3/mapred/local,/mnt/sdc/cdh3/mapred/local</value>
 		<final>true</final>
 	</property>
 

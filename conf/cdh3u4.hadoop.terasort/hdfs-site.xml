@@ -20,7 +20,7 @@
 	</property>
 	<property>
 		<name>dfs.data.dir</name>
-		<value>/mnt/sda/hadoop/data/,/mnt/sdb/hadoop/data/,/mnt/sdc/hadoop/data/</value>
+		<value>/mnt/sda/cdh3/data/,/mnt/sdb/cdh3/data/,/mnt/sdc/cdh3/data/</value>
 		<final>true</final>
 	</property>
 
