@@ -30,7 +30,7 @@
 	</property>
 	<property>
 		<name>mapred.fairscheduler.allocation.file</name>
-		<value>$HADOOP_HOME/conf/allocations.xml</value>
+		<value>${HADOOP_HOME}/conf/allocations.xml</value>
 		<final>true</final>
 	</property>
 
