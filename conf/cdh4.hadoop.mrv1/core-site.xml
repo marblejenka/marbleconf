@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+	<property>
+		<name>local.namenode</name>
+		<value>fc5</value>
+	</property>
+
+	<property>
+		<name>local.secondnamenode</name>
+		<value>fc5</value>
+	</property>
+
+	<property>
+		<name>local.jobtracker</name>
+		<value>fc5</value>
+	</property>
+
+	<property>
+		<name>fs.defaultFS</name>
+		<value>hdfs://${local.namenode}:8020</value>
+		<final>true</final>
+	</property>
+
+	<property>
+		<name>webinterface.private.actions</name>
+		<value>true</value>
+	</property>
+
+	<property>
+		<name>hadoop.security.authorization</name>
+		<value>false</value>
+	</property>
+</configuration>

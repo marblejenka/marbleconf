@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+	<!-- file system properties -->
+	<property>
+		<name>dfs.replication</name>
+		<value>2</value>
+	</property>
+	<property>
+		<name>dfs.block.size</name>
+		<value>536870912</value>
+	</property>
+	<property>
+		<name>dfs.datanode.du.reserved</name>
+		<value>536870912000</value>
+		<final>true</final>
+	</property>
+	<property>
+		<name>dfs.namenode.name.dir</name>
+		<value>/var/local/cdh4/hdfs/name</value>
+		<final>true</final>
+	</property>
+	<property>
+		<name>dfs.datanode.data.dir</name>
+		<value>/mnt/sda/cdh4/data/,/mnt/sdb/cdh4/data/,/mnt/sdc/cdh4/data/
+		</value>
+		<final>true</final>
+	</property>
+	<property>
+		<name>dfs.heartbeat.interval</name>
+		<value>3</value>
+	</property>
+	<property>
+		<name>dfs.safemode.threshold.pct</name>
+		<value>0</value>
+	</property>
+
+	<!-- ハンドラスレッド -->
+	<property>
+		<name>dfs.namenode.handler.count</name>
+		<value>20</value>
+		<final>true</final>
+	</property>
+	<property>
+		<name>dfs.datanode.handler.count</name>
+		<value>15</value>
+		<final>true</final>
+	</property>
+
+	<!-- Permissions configuration -->
+	<property>
+		<name>dfs.umaskmode</name>
+		<value>077</value>
+	</property>
+
+	<property>
+		<name>dfs.permissions</name>
+		<value>false</value>
+	</property>
+
+	<property>
+		<name>dfs.permissions.supergroup</name>
+		<value>hadoop</value>
+	</property>
+
+	<property>
+		<name>dfs.access.time.precision</name>
+		<value>0</value>
+	</property>
+</configuration>
