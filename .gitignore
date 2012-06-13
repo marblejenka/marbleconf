@@ -4,6 +4,6 @@
 /.settings
 /target
 /.DS_Store
-/.logs
-/.hosts
-/.bin
+/logs
+/hosts
+/bin
