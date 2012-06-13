@@ -20,7 +20,7 @@
 	</property>
 
 	<property>
-		<name>fs.default.name</name>
+		<name>fs.defaultFS</name>
 		<value>hdfs://${local.namenode}:8020</value>
 		<final>true</final>
 	</property>
