@@ -1,0 +1,8 @@
+#! /bin/sh
+rm -rf /etc/hadoop/cdh3.*
+rm -rf /etc/hadoop/cdh4.*
+
+cp -a ../conf/cdh3u4.hadoop.client/ /etc/hadoop/
+cp -a ../conf/cdh3u4.hadoop.terasort/ /etc/hadoop/
+cp -a ../conf/cdh4.hadoop.mrv1/ /etc/hadoop/
+
