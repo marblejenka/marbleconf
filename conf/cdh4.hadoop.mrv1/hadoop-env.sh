@@ -29,13 +29,13 @@ export HADOOP_CLIENT_OPTS="-Xmx128m ${HADOOP_CLIENT_OPTS}"
 export HADOOP_SECURE_DN_USER=hdfs
 
 # Where log files are stored.  $HADOOP_HOME/logs by default.
-export HADOOP_LOG_DIR=$HADOOP_HOME/logs
+export HADOOP_LOG_DIR=/var/local/cdh4/logs
 
 # Where log files are stored in the secure data environment.
 export HADOOP_SECURE_DN_LOG_DIR=$HADOOP_LOG_DIR
 
 # The directory where pid files are stored. /tmp by default.
-export HADOOP_PID_DIR=/var/local/hadoop/pid
+export HADOOP_PID_DIR=/var/local/cdh4/pid
 export HADOOP_SECURE_DN_PID_DIR=$HADOOP_PID_DIR
 
 # A string representing this instance of hadoop. $USER by default.
