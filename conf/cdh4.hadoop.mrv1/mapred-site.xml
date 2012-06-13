@@ -183,7 +183,7 @@
 
 	<property>
 		<name>mapred.temp.dir</name>
-		<value>/tmp/cdh4</value>
+		<value>/var/lib/hadoop-0.20/cache/mapred/tmp</value>
 		<final>true</final>
 	</property>
 
