@@ -8,4 +8,4 @@ sudo cp -a conf/cdh4.hadoop.mrv1/ /etc/hadoop/
 
 sudo chown -R root /etc/hadoop/
 sudo chmod -R a+r /etc/hadoop/
-sudo chmod -R a-w/etc/hadoop/
+sudo chmod -R a-w /etc/hadoop/
