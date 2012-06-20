@@ -21,6 +21,9 @@
 		<name>mapred.job.reuse.jvm.num.tasks</name>
 		<value>1</value>
 		<!-- <value>-1</value> -->
+		<description>cdh4u0のmrv1だとJVMを再利用させるとMRが動かないっぽい。本質的な問題はとりあえずおいておく。
+			http://stackoverflow.com/questions/10622040/jvm-reuse-in-hadoop-mapreduce-job
+		</description>
 	</property>
 
 	<!-- スケジューラー -->
