@@ -19,7 +19,8 @@
 	<!-- jvm起動のオーバーヘッド回避 -->
 	<property>
 		<name>mapred.job.reuse.jvm.num.tasks</name>
-		<value>-1</value>
+		<value>20</value>
+		<!-- <value>-1</value> -->
 	</property>
 
 	<!-- スケジューラー -->
