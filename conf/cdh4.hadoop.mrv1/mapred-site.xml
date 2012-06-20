@@ -188,11 +188,6 @@
 	</property>
 
 	<property>
-		<name>mapreduce.cluster.administrators</name>
-		<value>hadoop</value>
-	</property>
-
-	<property>
 		<name>mapred.jobtracker.restart.recover</name>
 		<value>false</value>
 	</property>
@@ -230,10 +225,5 @@
 	<property>
 		<name>mapreduce.jobtracker.staging.root.dir</name>
 		<value>/user</value>
-	</property>
-
-	<property>
-		<name>mapreduce.tasktracker.group</name>
-		<value>mapred</value>
 	</property>
 </configuration>
