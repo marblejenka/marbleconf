@@ -5,6 +5,7 @@ sudo rm -rf /etc/hadoop/cdh4.*
 sudo cp -a conf/cdh3.hadoop.terasort/ /etc/hadoop/
 sudo cp -a conf/cdh3.hadoop.client/ /etc/hadoop/
 sudo cp -a conf/cdh4.hadoop.mrv1/ /etc/hadoop/
+sudo cp -a conf/cdh4.hadoop.yarn/ /etc/hadoop/
 
 sudo chown -R root /etc/hadoop/
 sudo chmod -R a+r /etc/hadoop/
