@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Site specific YARN configuration properties -->
+
+<configuration>
+
+	<!-- -->
+	<property>
+		<name>yarn.resourcemanager.resource-tracker.address</name>
+		<value>${local.resourcemanager}:8025</value>
+	</property>
+	<property>
+		<name>yarn.resourcemanager.address</name>
+		<value>${local.resourcemanager}:8040</value>
+	</property>
+	<property>
+		<name>yarn.resourcemanager.scheduler.address</name>
+		<value>${local.resourcemanager}:8030</value>
+	</property>
+	<property>
+		<name>yarn.resourcemanager.admin.address</name>
+		<value>${local.resourcemanager}:8141</value>
+	</property>
+	<property>
+		<name>yarn.resourcemanager.webapp.address</name>
+		<value>${local.resourcemanager}:8088</value>
+	</property>
+
+	<!-- -->
+	<property>
+		<name>yarn.nodemanager.aux-services</name>
+		<value>mapreduce.shuffle</value>
+	</property>
+	<property>
+		<name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
+		<value>org.apache.hadoop.mapred.ShuffleHandler</value>
+	</property>
+
+	<!-- -->
+	<property>
+		<name>yarn.nodemanager.local-dirs</name>
+		<value>/mnt/sda/cdh4/yarn/local,/mnt/sdb/cdh4/yarn/local,/mnt/sdc/cdh4/yarn/local
+		</value>
+	</property>
+	<property>
+		<name>yarn.nodemanager.log-dirs</name>
+		<value>/mnt/sda/cdh4/yarn/logs,/mnt/sdb/cdh4/yarn/logs,/mnt/sdc/cdh4/yarn/logs
+		</value>
+	</property>
+
+	<!-- -->
+	<property>
+		<name>yarn.app.mapreduce.am.staging-dir</name>
+		<value>/tmp</value>
+	</property>
+</configuration>
