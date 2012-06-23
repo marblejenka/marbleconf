@@ -51,7 +51,17 @@
 
 	<!-- -->
 	<property>
+		<name>mapreduce.jobhistory.address</name>
+		<value>${local.resourcemanager}:10020</value>
+	</property>
+	<property>
+		<name>mapreduce.jobhistory.webapp.address</name>
+		<value>${local.resourcemanager}:19888</value>
+	</property>
+
+	<!-- -->
+	<property>
 		<name>yarn.app.mapreduce.am.staging-dir</name>
-		<value>/tmp</value>
+		<value>/user</value>
 	</property>
 </configuration>
