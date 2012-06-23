@@ -109,6 +109,7 @@
 	</property>
 
 	<!-- シャッフルフェーズの効率化 -->
+	<!-- 全体的に見直す必要がありそう
 	<property>
 		<name>io.sort.mb</name>
 		<value>768</value>
@@ -173,6 +174,7 @@
 		<name>mapred.reduce.slowstart.completed.maps</name>
 		<value>0</value>
 	</property>
+	 -->
 	<property>
 		<name>mapred.local.dir</name>
 		<value>/mnt/sda/cdh4/mapred/local,/mnt/sdb/cdh4/mapred/local,/mnt/sdc/cdh4/mapred/local
