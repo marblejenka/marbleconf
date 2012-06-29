@@ -1,12 +1,24 @@
 #! /bin/sh
 sudo rm -rf /etc/hadoop/cdh3.*
 sudo rm -rf /etc/hadoop/cdh4.*
+sudo rm -rf /etc/hbase/cdh4.*
+sudo rm -rf /etc/zookeeper/cdh4.*
 
 sudo cp -a conf/cdh3.hadoop.terasort/ /etc/hadoop/
 sudo cp -a conf/cdh3.hadoop.client/ /etc/hadoop/
 sudo cp -a conf/cdh4.hadoop.mrv1/ /etc/hadoop/
 sudo cp -a conf/cdh4.hadoop.yarn/ /etc/hadoop/
+sudo cp -a conf/cdh4.zookeeper/ /etc/zookeeper/
+sudo cp -a conf/cdh4.hbase/ /etc/hbase/
 
 sudo chown -R root /etc/hadoop/
+sudo chown -R root /etc/zookeeper/
+sudo chown -R root /etc/hbase/
+
 sudo chmod -R a+r /etc/hadoop/
+sudo chmod -R a+r /etc/zookeeper/
+sudo chmod -R a+r /etc/hbase/
+
 sudo chmod -R a-w /etc/hadoop/
+sudo chmod -R a-w /etc/zookeeper/
+sudo chmod -R a-w /etc/hbase/
