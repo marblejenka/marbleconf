@@ -1,0 +1,14 @@
+#! /bin/sh
+rm -rf /usr/local/etc/hadoop/*
+rm -rf /usr/local/etc/hbase/*
+rm -rf /usr/local/etc/pig/*
+rm -rf /usr/local/etc/hive/*
+
+cp -a conf/cdh4.hadoop.yarn/ /usr/local/etc/hadoop/conf/
+cp -a conf/cdh4.hbase/ /usr/local/etc/hbase/conf/
+
+cp -a conf.client/cdh4.hadoop.yarn/* /usr/local/etc/hadoop/conf/
+cp -a conf.client/cdh4.hbase/* /usr/local/etc/hbase/conf/
+cp -a conf.client/cdh4.pig/ /usr/local/etc/pig/conf/
+cp -a conf.client/cdh4.hive/ /usr/local/etc/hive/conf/
+
