@@ -1,0 +1,27 @@
+# HDFS マスタ
+sudo update-rc.d  hadoop-hdfs-namenode disable
+sudo update-rc.d  hadoop-hdfs-secondarynamenode disable
+
+# HDFS スレーブ
+sudo update-rc.d  hadoop-hdfs-datanode disable
+
+# MRv1 マスタ
+sudo update-rc.d  hadoop-0.20-mapreduce-jobtracker disable
+
+# MRv2 スレーブ
+sudo update-rc.d  hadoop-0.20-mapreduce-tasktracker disable
+
+# YARN マスタ
+sudo update-rc.d  hadoop-yarn-resourcemanager disable
+sudo update-rc.d  hadoop-mapreduce-historyserver disable
+sudo update-rc.d  hadoop-yarn-proxyserver disable
+
+# YARN スレーブ
+sudo update-rc.d  hadoop-yarn-nodemanager disable
+
+# HBase マスタ
+sudo update-rc.d  hbase-master disable
+sudo update-rc.d  zookeeper-server disable
+
+# HBase スレーブ
+sudo update-rc.d  hbase-regionserver disable
