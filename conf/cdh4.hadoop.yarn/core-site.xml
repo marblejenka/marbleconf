@@ -30,7 +30,6 @@
 	<property>
 		<name>io.file.buffer.size</name>
 		<value>65536</value>
-		<value>true</value>
 	</property>
 
 	<property>
