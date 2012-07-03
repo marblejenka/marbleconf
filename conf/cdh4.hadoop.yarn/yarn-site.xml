@@ -4,8 +4,7 @@
 <!-- Site specific YARN configuration properties -->
 
 <configuration>
-
-	<!-- -->
+	<!-- Resource Manager -->
 	<property>
 		<name>yarn.resourcemanager.resource-tracker.address</name>
 		<value>${local.resourcemanager}:8025</value>
@@ -26,18 +25,23 @@
 		<name>yarn.resourcemanager.webapp.address</name>
 		<value>${local.resourcemanager}:8088</value>
 	</property>
-
-	<!-- -->
 	<property>
-		<name>yarn.nodemanager.aux-services</name>
-		<value>mapreduce.shuffle</value>
-	</property>
-	<property>
-		<name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
-		<value>org.apache.hadoop.mapred.ShuffleHandler</value>
+		<name>yarn.resourcemanager.scheduler.class</name>
+		<value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler
+		</value>
 	</property>
 
-	<!-- -->
+	<!-- Scheduler -->
+	<property>
+		<name>yarn.scheduler.minimum-allocation-mb</name>
+		<value>2048</value>
+	</property>
+	<property>
+		<name>yarn.scheduler.maximum-allocation-mb</name>
+		<value>4096</value>
+	</property>
+
+	<!-- NodeManager -->
 	<property>
 		<name>yarn.nodemanager.local-dirs</name>
 		<value>/mnt/sda/cdh4/yarn/local,/mnt/sdb/cdh4/yarn/local,/mnt/sdc/cdh4/yarn/local
@@ -48,24 +52,23 @@
 		<value>/mnt/sda/cdh4/yarn/logs,/mnt/sdb/cdh4/yarn/logs,/mnt/sdc/cdh4/yarn/logs
 		</value>
 	</property>
-
-	<!-- -->
 	<property>
-		<name>mapreduce.jobhistory.address</name>
-		<value>${local.resourcemanager}:10020</value>
+		<name>yarn.nodemanager.aux-services</name>
+		<value>mapreduce.shuffle</value>
 	</property>
 	<property>
-		<name>mapreduce.jobhistory.webapp.address</name>
-		<value>${local.resourcemanager}:19888</value>
+		<name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
+		<value>org.apache.hadoop.mapred.ShuffleHandler</value>
 	</property>
+	<!-- 設定するべきであるように見えるが、どういう設定をすべきかがわからない <property> <name>yarn.nodemanager.resource.memory-mb</name> 
+		<value></value> </property> <property> <name>yarn.nodemanager.vmem-pmem-ratio</name> 
+		<value></value> </property> -->
 
-	<!-- -->
+	<!-- その他 -->
 	<property>
 		<name>yarn.app.mapreduce.am.staging-dir</name>
 		<value>/user</value>
 	</property>
-
-	<!-- -->
 	<property>
 		<name>yarn.application.classpath</name>
 		<value>

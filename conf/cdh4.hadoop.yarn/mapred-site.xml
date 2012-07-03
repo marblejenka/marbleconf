@@ -4,31 +4,25 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
-
-	<!-- YARN -->
+	<!-- YARNを使用する -->
 	<property>
 		<name>mapreduce.framework.name</name>
 		<value>yarn</value>
 	</property>
 
-
-	<!-- タスク取得の効率化 -->
+	<!-- タスク取得の効率化 要確認 -->
 	<property>
 		<name>mapreduce.tasktracker.outofband.heartbeat</name>
 		<value>true</value>
 	</property>
 
-	<!-- jvm起動のオーバーヘッド回避 -->
+	<!-- jvm起動のオーバーヘッド回避 要確認 -->
 	<property>
 		<name>mapred.job.reuse.jvm.num.tasks</name>
 		<value>1</value>
-		<!-- <value>-1</value> -->
-		<description>cdh4u0のmrv1だとJVMを再利用させるとMRが動かないっぽい。本質的な問題はとりあえずおいておく。
-			http://stackoverflow.com/questions/10622040/jvm-reuse-in-hadoop-mapreduce-job
-		</description>
 	</property>
 
-	<!-- スケジューラー -->
+	<!-- スケジューラー 要確認 -->
 	<property>
 		<name>mapred.jobtracker.taskScheduler</name>
 		<value>org.apache.hadoop.mapred.FairScheduler</value>
@@ -40,7 +34,7 @@
 		<final>true</final>
 	</property>
 
-	<!-- スロットとタスク割り当て -->
+	<!-- スロットとタスク割り当て 要確認 -->
 	<property>
 		<name>mapred.tasktracker.map.tasks.maximum</name>
 		<value>4</value>
@@ -60,7 +54,7 @@
 		<value>8</value>
 	</property>
 
-	<!--投機的実行の無効化 -->
+	<!--投機的実行の無効化 要確認 -->
 	<property>
 		<name>mapred.map.tasks.speculative.execution</name>
 		<value>false</value>
@@ -70,16 +64,24 @@
 		<value>false</value>
 	</property>
 
+	<!-- メモリ管理 -->
 	<property>
-		<name>mapred.map.child.java.opts</name>
+		<name>mapreduce.map.memory.mb</name>
+		<value>2048</value>
+	</property>
+	<property>
+		<name>mapreduce.map.java.opts</name>
 		<value>-Xms1024m -Xmx1024m</value>
 	</property>
 	<property>
-		<name>mapred.reduce.child.java.opts</name>
+		<name>mapreduce.reduce.memory.mb</name>
+		<value></value>
+	</property>
+	<property>
+		<name>mapreduce.reduce.java.opts</name>
 		<value>-Xms3072m -Xmx3072m</value>
 	</property>
-
-	<!-- メモリ監視 -->
+	<!-- メモリ監視 要確認 -->
 	<property>
 		<name>mapreduce.map.memory.physical.mb</name>
 		<value>2048</value>
@@ -102,79 +104,43 @@
 		<final>true</final>
 	</property>
 
-	<!-- ジョブ入出力の効率化 -->
+	<!-- ジョブ入出力の効率化 要確認 -->
 	<property>
 		<name>mapred.output.compression.type</name>
 		<value>BLOCK</value>
 	</property>
 
-	<!-- シャッフルフェーズの効率化 -->
-	<!-- 全体的に見直す必要がありそう
+	<!-- シャッフルフェーズの効率化 要確認 -->
 	<property>
-		<name>io.sort.mb</name>
+		<name>mapreduce.task.io.sort.mb</name>
 		<value>768</value>
 		<description>map</description>
 	</property>
+	<!-- <property> <name>io.sort.record.percent</name> <value>0.2</value> <description>map 
+		reduce</description> </property> <property> <name>io.sort.spill.percent</name> 
+		<value>0.95</value> <description>map reduce</description> </property> -->
 	<property>
-		<name>io.sort.record.percent</name>
-		<value>0.2</value>
-		<description>map reduce</description>
-	</property>
-	<property>
-		<name>io.sort.spill.percent</name>
-		<value>0.95</value>
-		<description>map reduce</description>
-	</property>
-	<property>
-		<name>io.sort.factor</name>
+		<name>mapreduce.task.io.sort.factor</name>
 		<value>200</value>
-		<description>map reduce</description>
+		<description>map/reduce</description>
 	</property>
+	<!-- <property> <name>mapred.compress.map.output</name> <value>true</value> 
+		<description>map</description> </property> <property> <name>mapred.map.output.compression.codec</name> 
+		<value>org.apache.hadoop.io.compress.SnappyCodec</value> <description>map</description> 
+		</property> <property> <name>tasktracker.http.threads</name> <value>80</value> 
+		<description>map</description> </property> -->
 	<property>
-		<name>mapred.compress.map.output</name>
-		<value>true</value>
-		<description>map</description>
-	</property>
-	<property>
-		<name>mapred.map.output.compression.codec</name>
-		<value>org.apache.hadoop.io.compress.SnappyCodec</value>
-		<description>map</description>
-	</property>
-	<property>
-		<name>tasktracker.http.threads</name>
-		<value>80</value>
-		<description>map</description>
-	</property>
-	<property>
-		<name>mapred.reduce.parallel.copies</name>
+		<name>mapreduce.reduce.shuffle.parallelcopies</name>
 		<value>4</value>
 		<description>reduce</description>
 	</property>
-	<property>
-		<name>mapred.job.shuffle.input.buffer.percent</name>
-		<value>0.95</value>
-		<description>reduce</description>
-	</property>
-	<property>
-		<name>mapred.job.shuffle.merge.percent</name>
-		<value>0.95</value>
-		<description>reduce</description>
-	</property>
-	<property>
-		<name>mapred.inmem.merge.threshold</name>
-		<value>20000</value>
-		<description>reduce</description>
-	</property>
-	<property>
-		<name>mapred.job.reduce.input.buffer.percent</name>
-		<value>0.95</value>
-		<description>reduce</description>
-	</property>
-	<property>
-		<name>mapred.reduce.slowstart.completed.maps</name>
-		<value>0</value>
-	</property>
-	 -->
+	<!-- <property> <name>mapred.job.shuffle.input.buffer.percent</name> <value>0.95</value> 
+		<description>reduce</description> </property> <property> <name>mapred.job.shuffle.merge.percent</name> 
+		<value>0.95</value> <description>reduce</description> </property> <property> 
+		<name>mapred.inmem.merge.threshold</name> <value>20000</value> <description>reduce</description> 
+		</property> <property> <name>mapred.job.reduce.input.buffer.percent</name> 
+		<value>0.95</value> <description>reduce</description> </property> <property> 
+		<name>mapred.reduce.slowstart.completed.maps</name> <value>0</value> </property> -->
 	<property>
 		<name>mapred.local.dir</name>
 		<value>/mnt/sda/cdh4/mapred/local,/mnt/sdb/cdh4/mapred/local,/mnt/sdc/cdh4/mapred/local
@@ -182,7 +148,17 @@
 		<final>true</final>
 	</property>
 
-	<!-- 未整理 -->
+	<!-- Histroy Server -->
+	<property>
+		<name>mapreduce.jobhistory.address</name>
+		<value>${local.resourcemanager}:10020</value>
+	</property>
+	<property>
+		<name>mapreduce.jobhistory.webapp.address</name>
+		<value>${local.resourcemanager}:19888</value>
+	</property>
+
+	<!-- 未整理 要確認 -->
 	<property>
 		<name>mapred.system.dir</name>
 		<value>/user/mapred/system</value>

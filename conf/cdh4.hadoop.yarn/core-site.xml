@@ -8,18 +8,15 @@
 		<name>local.namenode</name>
 		<value>fc5</value>
 	</property>
-
 	<property>
 		<name>local.secondnamenode</name>
 		<value>fc5</value>
 	</property>
-
 	<property>
 		<name>local.jobtracker</name>
 		<value>fc5</value>
 	</property>
 	<property>
-	
 		<name>local.resourcemanager</name>
 		<value>fc5</value>
 	</property>
@@ -28,6 +25,12 @@
 		<name>fs.defaultFS</name>
 		<value>hdfs://${local.namenode}:8020</value>
 		<final>true</final>
+	</property>
+
+	<property>
+		<name>io.file.buffer.size</name>
+		<value>65536</value>
+		<value>true</value>
 	</property>
 
 	<property>
