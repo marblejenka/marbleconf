@@ -69,13 +69,16 @@
 		<name>mapreduce.reduce.java.opts</name>
 		<value>-Xms3072m -Xmx3072m</value>
 	</property>
-	<!-- メモリ監視 要確認 -->
+
+	<!-- メモリ監視 -->
 	<property>
+		<!-- 要確認 -->
 		<name>mapreduce.map.memory.physical.mb</name>
 		<value>2048</value>
 		<final>true</final>
 	</property>
 	<property>
+		<!-- 要確認 -->
 		<name>mapreduce.reduce.memory.physical.mb</name>
 		<value>4096</value>
 		<final>true</final>
@@ -87,50 +90,88 @@
 		<value>5000</value>
 	</property>
 	<property>
+		<!-- 要確認 -->
 		<name>mapreduce.tasktracker.reserved.physicalmemory.mb</name>
 		<value>4096</value>
 		<final>true</final>
 	</property>
 
-	<!-- ジョブ入出力の効率化 要確認 -->
+	<!-- ジョブ入出力の効率化 -->
 	<property>
-		<name>mapred.output.compression.type</name>
+		<name>mapreduce.output.fileoutputformat.compress.type</name>
 		<value>BLOCK</value>
 	</property>
 
-	<!-- シャッフルフェーズの効率化 要確認 -->
+	<!-- シャッフルフェーズの効率化 -->
 	<property>
 		<name>mapreduce.task.io.sort.mb</name>
 		<value>768</value>
 		<description>map</description>
 	</property>
-	<!-- <property> <name>io.sort.record.percent</name> <value>0.2</value> <description>map 
-		reduce</description> </property> <property> <name>io.sort.spill.percent</name> 
-		<value>0.95</value> <description>map reduce</description> </property> -->
+	<property>
+		<!-- 要確認 -->
+		<name>io.sort.record.percent</name>
+		<value>0.2</value>
+		<description>map/reduce</description>
+	</property>
+	<property>
+		<name>mapreduce.map.sort.spill.percentt</name>
+		<value>0.95</value>
+		<description>map reduce</description>
+	</property>
 	<property>
 		<name>mapreduce.task.io.sort.factor</name>
 		<value>200</value>
 		<description>map/reduce</description>
 	</property>
-	<!-- <property> <name>mapred.compress.map.output</name> <value>true</value> 
-		<description>map</description> </property> <property> <name>mapred.map.output.compression.codec</name> 
-		<value>org.apache.hadoop.io.compress.SnappyCodec</value> <description>map</description> 
-		</property> <property> <name>tasktracker.http.threads</name> <value>80</value> 
-		<description>map</description> </property> -->
+	<property>
+		<name>mapreduce.map.output.compress</name>
+		<value>true</value>
+		<description>map</description>
+	</property>
+	<property>
+		<name>mapreduce.map.output.compress.codec</name>
+		<value>org.apache.hadoop.io.compress.SnappyCodec</value>
+		<description>map</description>
+	</property>
+	<property>
+		<name>mapreduce.tasktracker.http.threads</name>
+		<value>80</value>
+		<description>map</description>
+	</property>
 	<property>
 		<name>mapreduce.reduce.shuffle.parallelcopies</name>
 		<value>4</value>
 		<description>reduce</description>
 	</property>
-	<!-- <property> <name>mapred.job.shuffle.input.buffer.percent</name> <value>0.95</value> 
-		<description>reduce</description> </property> <property> <name>mapred.job.shuffle.merge.percent</name> 
-		<value>0.95</value> <description>reduce</description> </property> <property> 
-		<name>mapred.inmem.merge.threshold</name> <value>20000</value> <description>reduce</description> 
-		</property> <property> <name>mapred.job.reduce.input.buffer.percent</name> 
-		<value>0.95</value> <description>reduce</description> </property> <property> 
-		<name>mapred.reduce.slowstart.completed.maps</name> <value>0</value> </property> -->
 	<property>
-		<name>mapred.local.dir</name>
+		<name>mapreduce.reduce.shuffle.input.buffer.percent</name>
+		<value>0.95</value>
+		<description>reduce</description>
+	</property>
+	<property>
+		<name>mapreduce.reduce.shuffle.merge.percent</name>
+		<value>0.95</value>
+		<description>reduce</description>
+	</property>
+	<property>
+		<name>mapreduce.reduce.merge.inmem.threshold</name>
+		<value>20000</value>
+		<description>reduce</description>
+	</property>
+	<property>
+		<name>mapreduce.reduce.input.buffer.percent</name>
+		<value>0.95</value>
+		<description>reduce</description>
+	</property>
+	<property>
+		<name>mapreduce.job.reduce.slowstart.completedmaps</name>
+		<value>0</value>
+	</property>
+
+
+	<property>
+		<name>mapreduce.cluster.local.dir</name>
 		<value>/mnt/sda/cdh4/mapred/local,/mnt/sdb/cdh4/mapred/local,/mnt/sdc/cdh4/mapred/local
 		</value>
 		<final>true</final>
