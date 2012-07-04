@@ -22,17 +22,7 @@
 		<value>1</value>
 	</property>
 
-	<!-- スロットとタスク割り当て -->
-	<property>
-		<name>mapreduce.tasktracker.map.tasks.maximum</name>
-		<value>4</value>
-		<final>true</final>
-	</property>
-	<property>
-		<name>mapreduce.tasktracker.reduce.tasks.maximum</name>
-		<value>2</value>
-		<final>true</final>
-	</property>
+	<!-- タスク割り当て -->
 	<property>
 		<name>mapreduce.job.maps</name>
 		<value>16</value>
