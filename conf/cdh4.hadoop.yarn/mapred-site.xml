@@ -16,51 +16,39 @@
 		<value>true</value>
 	</property>
 
-	<!-- jvm起動のオーバーヘッド回避 要確認 -->
+	<!-- jvm起動のオーバーヘッド回避 -->
 	<property>
-		<name>mapred.job.reuse.jvm.num.tasks</name>
+		<name>mapreduce.job.jvm.numtasks</name>
 		<value>1</value>
 	</property>
 
-	<!-- スケジューラー 要確認 -->
+	<!-- スロットとタスク割り当て -->
 	<property>
-		<name>mapred.jobtracker.taskScheduler</name>
-		<value>org.apache.hadoop.mapred.FairScheduler</value>
-		<final>true</final>
-	</property>
-	<property>
-		<name>mapred.fairscheduler.allocation.file</name>
-		<value>/etc/hadoop/conf/allocations.xml</value>
-		<final>true</final>
-	</property>
-
-	<!-- スロットとタスク割り当て 要確認 -->
-	<property>
-		<name>mapred.tasktracker.map.tasks.maximum</name>
+		<name>mapreduce.tasktracker.map.tasks.maximum</name>
 		<value>4</value>
 		<final>true</final>
 	</property>
 	<property>
-		<name>mapred.tasktracker.reduce.tasks.maximum</name>
+		<name>mapreduce.tasktracker.reduce.tasks.maximum</name>
 		<value>2</value>
 		<final>true</final>
 	</property>
 	<property>
-		<name>mapred.map.tasks</name>
+		<name>mapreduce.job.maps</name>
 		<value>16</value>
 	</property>
 	<property>
-		<name>mapred.reduce.tasks</name>
+		<name>mapreduce.job.reduces</name>
 		<value>8</value>
 	</property>
 
-	<!--投機的実行の無効化 要確認 -->
+	<!--投機的実行の無効化 -->
 	<property>
-		<name>mapred.map.tasks.speculative.execution</name>
+		<name>mapreduce.map.speculative</name>
 		<value>false</value>
 	</property>
 	<property>
-		<name>mapred.reduce.tasks.speculative.execution</name>
+		<name>mapreduce.reduce.speculative</name>
 		<value>false</value>
 	</property>
 
@@ -75,7 +63,7 @@
 	</property>
 	<property>
 		<name>mapreduce.reduce.memory.mb</name>
-		<value></value>
+		<value>4096</value>
 	</property>
 	<property>
 		<name>mapreduce.reduce.java.opts</name>
