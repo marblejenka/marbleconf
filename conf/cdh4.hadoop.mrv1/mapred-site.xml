@@ -10,6 +10,11 @@
 		<final>true</final>
 	</property>
 
+	<property>
+		<name>mapreduce.framework.name</name>
+		<value>classic</value>
+	</property>
+
 	<!-- タスク取得の効率化 -->
 	<property>
 		<name>mapreduce.tasktracker.outofband.heartbeat</name>
