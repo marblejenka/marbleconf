@@ -7,15 +7,15 @@
 	<!-- ホスト名 -->
 	<property>
 		<name>local.namenode</name>
-		<value>fc5</value>
+		<value>fm1</value>
 	</property>
 	<property>
 		<name>local.secondnamenode</name>
-		<value>fc5</value>
+		<value>fm1</value>
 	</property>
 	<property>
 		<name>local.jobtracker</name>
-		<value>fc5</value>
+		<value>fm1</value>
 	</property>
 
 	<property>
