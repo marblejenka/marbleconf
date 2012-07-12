@@ -1,24 +1,24 @@
 #! /bin/sh
-sudo rm -rf /etc/marbleconf/hadoop/cdh3.*
-sudo rm -rf /etc/marbleconf/hadoop/cdh4.*
-sudo rm -rf /etc/marbleconf/hbase/cdh4.*
-sudo rm -rf /etc/marbleconf/zookeeper/cdh4.*
+sudo rm -rf /etc/marbleconf
+sudo mkdir -p /etc/marbleconf/hadoop
+sudo mkdir -p /etc/marbleconf/hbase
+sudo mkdir -p /etc/marbleconf/zookeeper
 
-sudo cp -a conf/cdh3.hadoop.terasort/ /etc/marbleconf/hadoop/
-sudo cp -a conf/cdh3.hadoop.client/ /etc/marbleconf/hadoop/
-sudo cp -a conf/cdh4.hadoop.mrv1/ /etc/marbleconf/hadoop/
-sudo cp -a conf/cdh4.hadoop.yarn/ /etc/marbleconf/hadoop/
-sudo cp -a conf/cdh4.zookeeper/ /etc/marbleconf/zookeeper/
-sudo cp -a conf/cdh4.hbase/ /etc/marbleconf/hbase/
+sudo cp -a conf/cdh3.hadoop.terasort/ /etc/marbleconf/hadoop
+sudo cp -a conf/cdh3.hadoop.client/ /etc/marbleconf/hadoop
+sudo cp -a conf/cdh4.hadoop.mrv1/ /etc/marbleconf/hadoop
+sudo cp -a conf/cdh4.hadoop.yarn/ /etc/marbleconf/hadoop
+sudo cp -a conf/cdh4.zookeeper/ /etc/marbleconf/zookeeper
+sudo cp -a conf/cdh4.hbase/ /etc/marbleconf/hbase
 
-sudo chown -R root /etc/marbleconf/hadoop/
-sudo chown -R root /etc/marbleconf/zookeeper/
-sudo chown -R root /etc/marbleconf/hbase/
+sudo chown -R root /etc/marbleconf/hadoop
+sudo chown -R root /etc/marbleconf/zookeeper
+sudo chown -R root /etc/marbleconf/hbase
 
-sudo chmod -R a+r /etc/marbleconf/hadoop/
-sudo chmod -R a+r /etc/marbleconf/zookeeper/
-sudo chmod -R a+r /etc/marbleconf/hbase/
+sudo chmod -R a+r /etc/marbleconf/hadoop
+sudo chmod -R a+r /etc/marbleconf/zookeeper
+sudo chmod -R a+r /etc/marbleconf/hbase
 
-sudo chmod -R a-w /etc/marbleconf/hadoop/
-sudo chmod -R a-w /etc/marbleconf/zookeeper/
-sudo chmod -R a-w /etc/marbleconf/hbase/
+sudo chmod -R a-w /etc/marbleconf/hadoop
+sudo chmod -R a-w /etc/marbleconf/zookeeper
+sudo chmod -R a-w /etc/marbleconf/hbase
