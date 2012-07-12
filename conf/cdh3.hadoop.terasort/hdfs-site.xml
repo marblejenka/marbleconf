@@ -20,7 +20,8 @@
 	</property>
 	<property>
 		<name>dfs.data.dir</name>
-		<value>/mnt/sda/cdh3/data/,/mnt/sdb/cdh3/data/,/mnt/sdc/cdh3/data/</value>
+		<value>/mnt/sda/cdh3/data/,/mnt/sdb/cdh3/data/,/mnt/sdc/cdh3/data/
+		</value>
 		<final>true</final>
 	</property>
 
@@ -30,6 +31,11 @@
 		<value>0</value>
 		<final>true</final>
 		<description>safemodeにしない</description>
+	</property>
+	<property>
+		<name>dfs.safemode.min.datanodes</name>
+		<value>2</value>
+		<final>true</final>
 	</property>
 
 	<!-- ハンドラスレッド -->
