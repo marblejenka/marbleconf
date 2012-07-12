@@ -32,11 +32,6 @@
 		<final>true</final>
 	</property>
 	<property>
-		<name>dfs.safemode.min.datanodes</name>
-		<value>2</value>
-		<final>true</final>
-	</property>
-	<property>
 		<name>dfs.safemode.extension</name>
 		<value>0</value>
 		<final>true</final>
