@@ -33,7 +33,7 @@
 	</property>
 	<property>
 		<name>dfs.safemode.extension</name>
-		<value>0</value>
+		<value>1000</value>
 		<final>true</final>
 	</property>
 
