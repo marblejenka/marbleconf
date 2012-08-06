@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+	<property>
+		<name>mapred.job.tracker</name>
+		<value>${local.jobtracker}:8021</value>
+		<final>true</final>
+	</property>
+
+	<!-- タスク取得の効率化 -->
+	<property>
+		<name>mapreduce.tasktracker.outofband.heartbeat</name>
+		<value>true</value>
+	</property>
+
+	<!-- jvm起動のオーバーヘッド回避 -->
+	<property>
+		<name>mapred.job.reuse.jvm.num.tasks</name>
+		<value>30</value>
+	</property>
+
+	<!-- スケジューラー -->
+	<property>
+		<name>mapred.jobtracker.taskScheduler</name>
+		<value>org.apache.hadoop.mapred.FairScheduler</value>
+		<final>true</final>
+	</property>
+	<property>
+		<name>mapred.fairscheduler.allocation.file</name>
+		<value>/usr/local/hadoop/hadoop-0.20.2-cdh3u4/conf/allocations.xml</value>
+		<final>true</final>
+	</property>
+
+	<!-- スロットとタスク割り当て -->
+	<property>
+		<name>mapred.tasktracker.map.tasks.maximum</name>
+		<value>12</value>
+		<final>true</final>
+	</property>
+	<property>
+		<name>mapred.tasktracker.reduce.tasks.maximum</name>
+		<value>12</value>
+		<final>true</final>
+	</property>
+	<property>
+		<name>mapred.map.tasks</name>
+		<value>23</value>
+	</property>
+	<property>
+		<name>mapred.reduce.tasks</name>
+		<value>23</value>
+	</property>
+
+	<!--投機的実行の無効化 -->
+	<property>
+		<name>mapred.map.tasks.speculative.execution</name>
+		<value>false</value>
+	</property>
+	<property>
+		<name>mapred.reduce.tasks.speculative.execution</name>
+		<value>false</value>
+	</property>
+
+	<property>
+		<name>mapred.map.child.java.opts</name>
+		<value>-Xms256m -Xmx512m</value>
+	</property>
+	<property>
+		<name>mapred.reduce.child.java.opts</name>
+		<value>-Xms256m -Xmx512m</value>
+	</property>
+
+	<!-- メモリ監視 -->
+	<property>
+		<name>mapreduce.map.memory.physical.mb</name>
+		<value>2048</value>
+		<final>true</final>
+	</property>
+	<property>
+		<name>mapreduce.reduce.memory.physical.mb</name>
+		<value>4096</value>
+		<final>true</final>
+	</property>
+	<property>
+		<name>mapreduce.tasktracker.taskmemorymanager.monitoringinterval
+		</name>
+		<final>true</final>
+		<value>5000</value>
+	</property>
+	<property>
+		<name>mapreduce.tasktracker.reserved.physicalmemory.mb</name>
+		<value>4096</value>
+		<final>true</final>
+	</property>
+
+	<!-- ジョブ入出力の効率化 -->
+	<property>
+		<name>mapred.output.compression.type</name>
+		<value>BLOCK</value>
+	</property>
+
+	<!-- シャッフルフェーズの効率化 -->
+	<property>
+		<name>io.sort.mb</name>
+		<value>256</value>
+		<description>map</description>
+	</property>
+	<property>
+		<name>io.sort.record.percent</name>
+		<value>0.2</value>
+		<description>map reduce</description>
+	</property>
+	<property>
+		<name>io.sort.spill.percent</name>
+		<value>0.95</value>
+		<description>map reduce</description>
+	</property>
+	<property>
+		<name>io.sort.factor</name>
+		<value>200</value>
+		<description>map reduce</description>
+	</property>
+	<property>
+		<name>mapred.compress.map.output</name>
+		<value>true</value>
+		<description>map</description>
+	</property>
+	<property>
+		<name>mapred.map.output.compression.codec</name>
+		<value>org.apache.hadoop.io.compress.SnappyCodec</value>
+		<description>map</description>
+	</property>
+	<property>
+		<name>tasktracker.http.threads</name>
+		<value>80</value>
+		<description>map</description>
+	</property>
+	<property>
+		<name>mapred.reduce.parallel.copies</name>
+		<value>4</value>
+		<description>reduce</description>
+	</property>
+	<property>
+		<name>mapred.job.shuffle.input.buffer.percent</name>
+		<value>0.95</value>
+		<description>reduce</description>
+	</property>
+	<property>
+		<name>mapred.job.shuffle.merge.percent</name>
+		<value>0.95</value>
+		<description>reduce</description>
+	</property>
+	<property>
+		<name>mapred.inmem.merge.threshold</name>
+		<value>20000</value>
+		<description>reduce</description>
+	</property>
+	<property>
+		<name>mapred.job.reduce.input.buffer.percent</name>
+		<value>0.95</value>
+		<description>reduce</description>
+	</property>
+	<property>
+		<name>mapred.reduce.slowstart.completed.maps</name>
+		<value>0</value>
+	</property>
+	<property>
+		<name>mapred.local.dir</name>
+		<value>/mnt/sda/cdh3/mapred/local,/mnt/sdb/cdh3/mapred/local,/mnt/sdc/cdh3/mapred/local</value>
+		<final>true</final>
+	</property>
+</configuration>

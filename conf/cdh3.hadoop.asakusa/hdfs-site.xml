@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+	<!-- データ配置 -->
+	<property>
+		<name>dfs.replication</name>
+		<value>2</value>
+	</property>
+	<property>
+		<name>dfs.block.size</name>
+		<value>67108864</value>
+	</property>
+	<property>
+		<name>dfs.datanode.du.reserved</name>
+		<value>536870912000</value>
+		<final>true</final>
+	</property>
+	<property>
+		<name>dfs.data.dir</name>
+		<value>/mnt/sda/cdh3/data/,/mnt/sdb/cdh3/data/,/mnt/sdc/cdh3/data/
+		</value>
+		<final>true</final>
+	</property>
+
+	<!--  safe mode -->
+	<property>
+		<name>dfs.safemode.threshold.pct</name>
+		<value>0.999f</value>
+		<final>true</final>
+	</property>
+	<property>
+		<name>dfs.safemode.extension</name>
+		<value>1000</value>
+		<final>true</final>
+	</property>
+
+	<!-- ハンドラスレッド -->
+	<property>
+		<name>dfs.namenode.handler.count</name>
+		<value>20</value>
+		<final>true</final>
+	</property>
+	<property>
+		<name>dfs.datanode.handler.count</name>
+		<value>15</value>
+		<final>true</final>
+	</property>
+
+	<!-- セキュリティ周り -->
+	<property>
+		<name>dfs.permissions</name>
+		<value>false</value>
+		<final>true</final>
+	</property>
+	<property>
+		<name>dfs.umaskmode</name>
+		<value>077</value>
+		<final>true</final>
+	</property>
+</configuration>
