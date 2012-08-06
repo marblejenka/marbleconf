@@ -7,8 +7,8 @@
 export JAVA_HOME=/usr/lib/jvm/java-6-sun
 
 # The maximum amount of heap to use, in MB. Default is 1000.
-export HADOOP_HEAPSIZE=512
-export HADOOP_NAMENODE_INIT_HEAPSIZE=512
+export HADOOP_HEAPSIZE=1024
+export HADOOP_NAMENODE_INIT_HEAPSIZE=1024
 
 # Extra Java runtime options.  Empty by default.
 export HADOOP_OPTS="-Djava.net.preferIPv4Stack=true ${HADOOP_OPTS}"
