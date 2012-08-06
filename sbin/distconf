@@ -5,6 +5,7 @@ sudo mkdir -p /etc/marbleconf/hbase
 sudo mkdir -p /etc/marbleconf/zookeeper
 
 sudo cp -a conf/cdh3.hadoop.asakusa/ /etc/marbleconf/hadoop
+sudo cp -a conf/cdh3.hadoop.terasort/ /etc/marbleconf/hadoop
 sudo cp -a conf/cdh3.hadoop.client/ /etc/marbleconf/hadoop
 sudo cp -a conf/cdh4.hadoop.mrv1/ /etc/marbleconf/hadoop
 sudo cp -a conf/cdh4.hadoop.yarn/ /etc/marbleconf/hadoop
