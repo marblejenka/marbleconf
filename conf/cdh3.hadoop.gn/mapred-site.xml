@@ -47,15 +47,15 @@
 	</property>
 	<property>
 		<name>mapred.map.tasks</name>
-		<value>11</value>
+		<value>42</value>
 	</property>
 	<property>
 		<name>mapred.reduce.tasks</name>
-		<value>48</value>
+		<value>42</value>
 	</property>
 	<property>
 		<name>mapred.map.child.java.opts</name>
-		<value>-Xms1024m -Xmx2048m</value>
+		<value>-Xms1024m -Xmx1024m</value>
 	</property>
 	<property>
 		<name>mapred.reduce.child.java.opts</name>
@@ -75,7 +75,7 @@
 	<!-- シャッフルフェーズの効率化 -->
 	<property>
 		<name>io.sort.mb</name>
-		<value>768</value>
+		<value>512</value>
 		<description>map</description>
 	</property>
 	<property>
@@ -85,7 +85,7 @@
 	</property>
 	<property>
 		<name>io.sort.spill.percent</name>
-		<value>0.95</value>
+		<value>0.9</value>
 		<description>map reduce</description>
 	</property>
 	<property>
@@ -110,27 +110,27 @@
 	</property>
 	<property>
 		<name>mapred.reduce.parallel.copies</name>
-		<value>4</value>
+		<value>40</value>
 		<description>reduce</description>
 	</property>
 	<property>
 		<name>mapred.job.shuffle.input.buffer.percent</name>
-		<value>0.95</value>
+		<value>0.9</value>
 		<description>reduce</description>
 	</property>
 	<property>
 		<name>mapred.job.shuffle.merge.percent</name>
-		<value>0.95</value>
+		<value>0.8</value>
+		<description>reduce</description>
+	</property>
+	<property>
+		<name>mapred.job.reduce.input.buffer.percent</name>
+		<value>0.9</value>
 		<description>reduce</description>
 	</property>
 	<property>
 		<name>mapred.inmem.merge.threshold</name>
 		<value>0</value>
-		<description>reduce</description>
-	</property>
-	<property>
-		<name>mapred.job.reduce.input.buffer.percent</name>
-		<value>0.95</value>
 		<description>reduce</description>
 	</property>
 	<property>
@@ -155,7 +155,8 @@
 	<!-- システムディレクトリ -->
 	<property>
 		<name>mapred.local.dir</name>
-		<value>/hadoop/mapred/local</value>
+		<value>/dev/shm/hadoop/mapred/local</value>
+		<!-- <value>/hadoop/mapred/local</value> -->
 	</property>
 	<property>
 		<name>mapred.system.dir</name>
