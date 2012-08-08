@@ -4,122 +4,161 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
+	<property>
+		<name>mapred.job.tracker</name>
+		<value>${local.jobtracker}:8021</value>
+		<final>true</final>
+	</property>
 
-  <property>
-    <name>mapred.child.java.opts</name>
-    <value>-Xmx1024m</value>
-  </property>
+	<!-- タスク取得の効率化 -->
+	<property>
+		<name>mapreduce.tasktracker.outofband.heartbeat</name>
+		<value>true</value>
+	</property>
 
-  <property>
-    <name>mapred.job.tracker</name>
-    <value>mapr01:8021</value>
-  </property>
+	<!-- jvm起動のオーバーヘッド回避 -->
+	<property>
+		<name>mapred.job.reuse.jvm.num.tasks</name>
+		<value>128</value>
+	</property>
 
-  <property>
-    <name>mapred.local.dir</name>
-    <value>/hadoop/mapred/local</value>
-  </property>
+	<!-- スケジューラー -->
+	<property>
+		<name>mapred.jobtracker.taskScheduler</name>
+		<value>org.apache.hadoop.mapred.FairScheduler</value>
+		<final>true</final>
+	</property>
+	<property>
+		<name>mapred.fairscheduler.allocation.file</name>
+		<value>/etc/hadoop/conf/allocations.xml</value>
+		<final>true</final>
+	</property>
 
-  <property>
-    <name>mapred.reduce.parallel.copies</name>
-    <value>4</value>
-  </property>
+	<!-- スロットとタスク割り当て -->
+	<property>
+		<name>mapred.tasktracker.map.tasks.maximum</name>
+		<value>6</value>
+		<final>true</final>
+	</property>
+	<property>
+		<name>mapred.tasktracker.reduce.tasks.maximum</name>
+		<value>6</value>
+		<final>true</final>
+	</property>
+	<property>
+		<name>mapred.map.tasks</name>
+		<value>11</value>
+	</property>
+	<property>
+		<name>mapred.reduce.tasks</name>
+		<value>48</value>
+	</property>
+	<property>
+		<name>mapred.map.child.java.opts</name>
+		<value>-Xms1024m -Xmx2048m</value>
+	</property>
+	<property>
+		<name>mapred.reduce.child.java.opts</name>
+		<value>-Xms2048m -Xmx2048m</value>
+	</property>
 
-  <property>
-    <name>mapred.reduce.slowstart.completed.maps</name>
-    <value>0.8</value>
-  </property>
+	<!--投機的実行の無効化 -->
+	<property>
+		<name>mapred.map.tasks.speculative.execution</name>
+		<value>false</value>
+	</property>
+	<property>
+		<name>mapred.reduce.tasks.speculative.execution</name>
+		<value>false</value>
+	</property>
 
-  <property>
-    <name>mapred.map.tasks</name>
-    <value>60</value>
-  </property>
+	<!-- シャッフルフェーズの効率化 -->
+	<property>
+		<name>io.sort.mb</name>
+		<value>768</value>
+		<description>map</description>
+	</property>
+	<property>
+		<name>io.sort.record.percent</name>
+		<value>0.2</value>
+		<description>map reduce</description>
+	</property>
+	<property>
+		<name>io.sort.spill.percent</name>
+		<value>0.95</value>
+		<description>map reduce</description>
+	</property>
+	<property>
+		<name>io.sort.factor</name>
+		<value>200</value>
+		<description>map reduce</description>
+	</property>
+	<property>
+		<name>mapred.compress.map.output</name>
+		<value>true</value>
+		<description>map</description>
+	</property>
+	<property>
+		<name>mapred.map.output.compression.codec</name>
+		<value>org.apache.hadoop.io.compress.SnappyCodec</value>
+		<description>map</description>
+	</property>
+	<property>
+		<name>tasktracker.http.threads</name>
+		<value>80</value>
+		<description>map</description>
+	</property>
+	<property>
+		<name>mapred.reduce.parallel.copies</name>
+		<value>4</value>
+		<description>reduce</description>
+	</property>
+	<property>
+		<name>mapred.job.shuffle.input.buffer.percent</name>
+		<value>0.95</value>
+		<description>reduce</description>
+	</property>
+	<property>
+		<name>mapred.job.shuffle.merge.percent</name>
+		<value>0.95</value>
+		<description>reduce</description>
+	</property>
+	<property>
+		<name>mapred.inmem.merge.threshold</name>
+		<value>0</value>
+		<description>reduce</description>
+	</property>
+	<property>
+		<name>mapred.job.reduce.input.buffer.percent</name>
+		<value>0.95</value>
+		<description>reduce</description>
+	</property>
+	<property>
+		<name>mapred.reduce.slowstart.completed.maps</name>
+		<value>0</value>
+	</property>
 
-  <property>
-    <name>mapred.reduce.tasks</name>
-    <value>30</value>
-  </property>
+	<!-- map outputの圧縮 -->
+	<property>
+		<name>mapred.output.compression.type</name>
+		<value>BLOCK</value>
+	</property>
+	<property>
+		<name>mapred.output.compress</name>
+		<value>true</value>
+	</property>
+	<property>
+		<name>mapred.output.compression.codec</name>
+		<value>org.apache.hadoop.io.compress.SnappyCodec</value>
+	</property>
 
-  <property>
-    <name>mapred.tasktracker.map.tasks.maximum</name>
-    <value>6</value>
-  </property>
-
-  <property>
-    <name>mapred.tasktracker.reduce.tasks.maximum</name>
-    <value>3</value>
-  </property>
-
-  <property>
-    <name>mapred.output.compression.type</name>
-    <value>BLOCK</value>
-  </property>
-
-  <property>
-    <name>tasktracker.http.threads</name>
-    <value>40</value>
-  </property>
-
-  <property>
-    <name>io.sort.mb</name>
-    <value>128</value>
-  </property>
-
-  <property>
-    <name>io.sort.factor</name>
-    <value>64</value>
-  </property>
-
-  <property>
-    <name>mapred.system.dir</name>
-    <value>/mapred/system</value>
-  </property>
-
-  <property>
-    <name>mapred.job.reuse.jvm.num.tasks</name>
-    <value>128</value>
-  </property>
-
-  <property>
-    <name>mapreduce.tasktracker.outofband.heartbeat</name>
-    <value>true</value>
-  </property>
-
-  <property>
-    <name>mapred.output.compression.type</name>
-    <value>BLOCK</value>
-  </property>
-
-  <property>
-    <name>mapred.output.compress</name>
-    <value>true</value>
-  </property>
-  <property>
-    <name>mapred.compress.map.output</name>
-    <value>true</value>
-  </property>
-  <property>
-    <name>mapred.output.compression.codec</name>
-    <value>org.apache.hadoop.io.compress.SnappyCodec</value>
-  </property>
-  <property>
-    <name>mapred.map.output.compression.codec</name>
-    <value>org.apache.hadoop.io.compress.SnappyCodec</value>
-  </property>
-
-  <property>
-    <name>mapred.reduce.tasks.speculative.execution</name>
-    <value>false</value>
-  </property>
-
-  <property>
-    <name>mapred.map.tasks.speculative.execution</name>
-    <value>false</value>
-  </property>
-<!--
-  <property>
-    <name>mapred.min.split.size</name>
-    <value>1073741824</value>
-  </property>
--->
+	<!-- システムディレクトリ -->
+	<property>
+		<name>mapred.local.dir</name>
+		<value>/hadoop/mapred/local</value>
+	</property>
+	<property>
+		<name>mapred.system.dir</name>
+		<value>/mapred/system</value>
+	</property>
 </configuration>

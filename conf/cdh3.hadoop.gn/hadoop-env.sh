@@ -12,7 +12,7 @@
 # export HADOOP_CLASSPATH="<extra_entries>:$HADOOP_CLASSPATH"
 
 # The maximum amount of heap to use, in MB. Default is 1000.
-# export HADOOP_HEAPSIZE=2000
+export HADOOP_HEAPSIZE=2048
 
 # Extra Java runtime options.  Empty by default.
 # if [ "$HADOOP_OPTS" == "" ]; then export HADOOP_OPTS=-server; else HADOOP_OPTS+=" -server"; fi
