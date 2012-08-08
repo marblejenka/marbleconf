@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+	<property>
+		<name>dfs.name.dir</name>
+		<value>/hadoop/nn</value>
+	</property>
+	<property>
+		<name>dfs.data.dir</name>
+		<value>/hadoop/dn</value>
+	</property>
+	<property>
+		<name>dfs.permissions</name>
+		<value>false</value>
+	</property>
+
+	<property>
+		<name>dfs.replication</name>
+		<value>1</value>
+	</property>
+
+	<property>
+		<name>dfs.umaskmode</name>
+		<value>022</value>
+	</property>
+
+	<property>
+		<name>dfs.datanode.du.reserved</name>
+		<value>10</value>
+	</property>
+
+	<!-- ハンドラスレッド -->
+	<property>
+		<name>dfs.namenode.handler.count</name>
+		<value>20</value>
+		<final>true</final>
+	</property>
+	<property>
+		<name>dfs.datanode.handler.count</name>
+		<value>15</value>
+		<final>true</final>
+	</property>
+</configuration>

@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+
+  <property>
+    <name>mapred.child.java.opts</name>
+    <value>-Xmx1024m</value>
+  </property>
+
+  <property>
+    <name>mapred.job.tracker</name>
+    <value>mapr01:8021</value>
+  </property>
+
+  <property>
+    <name>mapred.local.dir</name>
+    <value>/hadoop/mapred/local</value>
+  </property>
+
+  <property>
+    <name>mapred.reduce.parallel.copies</name>
+    <value>4</value>
+  </property>
+
+  <property>
+    <name>mapred.reduce.slowstart.completed.maps</name>
+    <value>0.8</value>
+  </property>
+
+  <property>
+    <name>mapred.map.tasks</name>
+    <value>60</value>
+  </property>
+
+  <property>
+    <name>mapred.reduce.tasks</name>
+    <value>30</value>
+  </property>
+
+  <property>
+    <name>mapred.tasktracker.map.tasks.maximum</name>
+    <value>6</value>
+  </property>
+
+  <property>
+    <name>mapred.tasktracker.reduce.tasks.maximum</name>
+    <value>3</value>
+  </property>
+
+  <property>
+    <name>mapred.output.compression.type</name>
+    <value>BLOCK</value>
+  </property>
+
+  <property>
+    <name>tasktracker.http.threads</name>
+    <value>40</value>
+  </property>
+
+  <property>
+    <name>io.sort.mb</name>
+    <value>128</value>
+  </property>
+
+  <property>
+    <name>io.sort.factor</name>
+    <value>64</value>
+  </property>
+
+  <property>
+    <name>mapred.system.dir</name>
+    <value>/mapred/system</value>
+  </property>
+
+  <property>
+    <name>mapred.job.reuse.jvm.num.tasks</name>
+    <value>128</value>
+  </property>
+
+  <property>
+    <name>mapreduce.tasktracker.outofband.heartbeat</name>
+    <value>true</value>
+  </property>
+
+  <property>
+    <name>mapred.output.compression.type</name>
+    <value>BLOCK</value>
+  </property>
+
+  <property>
+    <name>mapred.output.compress</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>mapred.compress.map.output</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>mapred.output.compression.codec</name>
+    <value>org.apache.hadoop.io.compress.SnappyCodec</value>
+  </property>
+  <property>
+    <name>mapred.map.output.compression.codec</name>
+    <value>org.apache.hadoop.io.compress.SnappyCodec</value>
+  </property>
+
+  <property>
+    <name>mapred.reduce.tasks.speculative.execution</name>
+    <value>false</value>
+  </property>
+
+  <property>
+    <name>mapred.map.tasks.speculative.execution</name>
+    <value>false</value>
+  </property>
+<!--
+  <property>
+    <name>mapred.min.split.size</name>
+    <value>1073741824</value>
+  </property>
+-->
+</configuration>
