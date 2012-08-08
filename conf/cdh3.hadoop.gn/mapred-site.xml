@@ -80,7 +80,7 @@
 	</property>
 	<property>
 		<name>io.sort.record.percent</name>
-		<value>0.2</value>
+		<value>0.1</value>
 		<description>map reduce</description>
 	</property>
 	<property>
